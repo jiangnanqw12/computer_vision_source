@@ -1,7 +1,7 @@
 import cv2
 
 # Load the image
-img = cv2.imread('img1.png')
+img = cv2.imread('box.png')
 
 # Create BRISK detector and descriptor
 brisk = cv2.BRISK_create()
