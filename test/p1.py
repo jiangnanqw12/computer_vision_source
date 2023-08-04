@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Reading the image
-image_path = 'Interview/4.jpg'
+image_path = 'Interview/1.jpg'
 image = cv2.imread(image_path)
 
 # Converting the image to grayscale for contour detection
@@ -45,5 +45,5 @@ plt.title('Filled Shapes')
 plt.show()
 
 # Saving the filled shapes image
-filled_image_path = 'filled_shapes.jpg'
+filled_image_path = 'output/filled_shapes.jpg'
 cv2.imwrite(filled_image_path, filled_image)
