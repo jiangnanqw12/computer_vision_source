@@ -5,7 +5,7 @@ import cv2
 # Load the image
 image_path = 'Interview/4.jpg'
 image = cv2.imread(image_path)
-image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB) # Converting from BGR to RGB
+
 
 # Display the original image
 plt.imshow(image)
@@ -26,7 +26,12 @@ contours, _ = cv2.findContours(thresholded_image, cv2.RETR_EXTERNAL, cv2.CHAIN_A
 
 # Draw the contours on a blank image
 contour_image = image.copy()
-cv2.drawContours(contour_image, contours, -1, (0, 255, 0), 3)
+contour_image[:] = 0
+
+# Drawing the contours
+for contour in contours:
+    cv2.drawContours(contour_image, [contour], -1, (255, 255, 255), 2)
+#cv2.drawContours(contour_image, contours, -1, (0, 255, 0), 3)
 
 # Display the image with contours
 plt.imshow(contour_image)
@@ -39,7 +44,7 @@ import numpy as np
 
 # Create a blank image to draw filled shapes
 filled_shapes_image = image.copy()
-
+filled_shapes_image[:] = 0
 # Iterate through the contours and fill each shape with its original color
 for contour in contours:
     # Create a mask for the current shape

@@ -4,7 +4,7 @@ import cv2
 # Load the original image
 image_path = 'Interview/3.jpg'
 image_original = cv2.imread(image_path)
-image_original = cv2.cvtColor(image_original, cv2.COLOR_BGR2RGB) # Convert from BGR to RGB
+
 
 # Display the original image
 plt.imshow(image_original)
